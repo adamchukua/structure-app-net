@@ -1,7 +1,12 @@
+using Microsoft.EntityFrameworkCore;
+using StructureApp.Models;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddRazorPages();
+builder.Services.AddDbContext<FolderContext>(options =>
+    options.UseSqlServer(builder.Configuration.GetConnectionString("DbContext")));
 
 var app = builder.Build();
 
@@ -19,6 +24,10 @@ app.UseStaticFiles();
 app.UseRouting();
 
 app.UseAuthorization();
+
+app.MapControllerRoute(
+    name: "default",
+    pattern: "{controller=Folder}/{action=Index}");
 
 app.MapRazorPages();
 
