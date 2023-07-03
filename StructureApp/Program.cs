@@ -24,6 +24,11 @@ app.UseStaticFiles();
 app.UseRouting();
 
 app.MapControllerRoute(
+    name: "import",
+    pattern: "Folder/Import",
+    defaults: new { controller = "Folder", action = "Import" });
+
+app.MapControllerRoute(
     name: "default",
     pattern: "{*resource}",
     defaults: new { controller = "Folder", action = "Index" });

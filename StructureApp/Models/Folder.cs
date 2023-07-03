@@ -11,5 +11,13 @@ namespace StructureApp.Models
         public string Name { get; set; }
         [NotMapped]
         public List<Folder> ChildFolders { get; set; }
+
+        public Folder() {}
+
+        public Folder(long? parentId, string name)
+        {
+            ParentId = parentId;
+            Name = name;
+        }
     }
 }
