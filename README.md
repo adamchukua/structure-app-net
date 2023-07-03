@@ -6,6 +6,8 @@
 
 ## Example of structure
 
-```Creating;Resources
+```
+Creating;Resources
 Creating;Evidence
 Resources;Primary
+```
