@@ -23,11 +23,12 @@ app.UseStaticFiles();
 
 app.UseRouting();
 
-app.UseAuthorization();
-
 app.MapControllerRoute(
     name: "default",
-    pattern: "{controller=Folder}/{action=Index}");
+    pattern: "{*resource}",
+    defaults: new { controller = "Folder", action = "Index" });
+
+app.UseAuthorization();
 
 app.MapRazorPages();
 

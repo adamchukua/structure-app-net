@@ -9,5 +9,7 @@ namespace StructureApp.Models
         [Column("parent_id")]
         public long? ParentId { get; set; }
         public string Name { get; set; }
+        [NotMapped]
+        public List<Folder> ChildFolders { get; set; }
     }
 }
